@@ -2,8 +2,9 @@ import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
+console.log((url) => fetch(url).then((r) => r.text()));
 export function useListEmoji() {
-  const { data, error, isLoading } = useSWR("/api/all", fetcher, {
+  const { data, error, isLoading } = useSWR("api/all", fetcher, {
     fallbackData: [],
   });
 
